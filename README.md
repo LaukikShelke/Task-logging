@@ -68,3 +68,81 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+Login api  (response)
+const data = {
+        "userId": 123,
+        "username": "john_doe",
+        "time": [
+          { "id": 1, "slot": "Feb 1" },
+          { "id": 2, "slot": "Feb 2" },
+          { "id": 3, "slot": "Feb 3" }
+        ],
+        "token": "abc123xyz"
+      };
+
+Login api (payload)
+loginData = {
+      username,
+      password,
+    };
+
+ fetch task details (response)   
+ const data = {
+        "timeLoggedDetails": [
+         
+        ],
+        "taskList": [
+          {
+            "id": 1,
+            "taskname": "Task 1",
+            "description": "Description 1"
+          },
+          {
+            "id": 2,
+            "taskname": "Task 2",
+            "description": "Description 2"
+          }
+        ]
+      }
+     url example
+      fetch task details url = https://example.com/api/time-logged?userId=1&timeId=1
+
+      login task (post request)
+      payload
+      {
+  "userId": 123,
+  "timeId": 1,
+  "tasks": [
+    {
+      "taskId": 1,
+      "taskname": "Task 1",
+      "description": "Description for Task 1",
+      "comment": "Worked on Task 1",
+      "percentageWorkDone": 50
+    },
+    {
+      "taskId": 2,
+      "taskname": "Task 2",
+      "description": "Description for Task 2",
+      "comment": "Worked on Task 2",
+      "percentageWorkDone": 75
+    },
+    {
+      "taskId": 3,
+      "taskname": "Task 3",
+      "description": "Description for Task 3",
+      "comment": "Worked on Task 3",
+      "percentageWorkDone": 100
+    }
+  ]
+}
+
+response 
+{
+  "status": "success",
+  "message": "Time logged successfully!",
+}
+
